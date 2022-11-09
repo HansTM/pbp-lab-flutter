@@ -232,29 +232,32 @@ class _MyFormPageState extends State<MyFormPage> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             elevation: 15,
-                            child: Container(
-                              child: ListView(
-                                padding: const EdgeInsets.only(
-                                    top: 20, bottom: 20),
-                                shrinkWrap: true,
-                                children: <Widget>[
-                                  Center(child: const Text('Informasi Data')),
-                                  SizedBox(height: 20),
-                                  Text(
-                                    'Nama Lengkap: $_namaLengkap\n' 
-                                    'Jenjang: ${jenjangSarjana ? 'Sarjana' : jenjangDiploma ? 'Diploma' : jenjangMagister ? 'Magister' : 'Doktor'}\n'
-                                    'Umur: $umur\n'
-                                    'Kelas PBP: $kelasPBP\n'
-                                    'Practice Mode: ${_nilaiSwitch ? 'Ya' : 'Tidak'}'
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text('Kembali'),
-                                  ),
-                                ],
-                              ),
+                            child: ListView(
+                              padding: const EdgeInsets.all(20),
+                              shrinkWrap: true,
+                              children: <Widget>[
+                                Center(
+                                  child: Text(
+                                    'Informasi Data',
+                                    style: Theme.of(context).textTheme.headline6,
+                                  )
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  'Nama Lengkap: $_namaLengkap\n' 
+                                  'Jenjang: ${jenjangSarjana ? 'Sarjana' : jenjangDiploma ? 'Diploma' : jenjangMagister ? 'Magister' : 'Doktor'}\n'
+                                  'Umur: $umur\n'
+                                  'Kelas PBP: $kelasPBP\n'
+                                  'Practice Mode: ${_nilaiSwitch ? 'Ya' : 'Tidak'}'
+                                ),
+                                const SizedBox(height: 20),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Kembali'),
+                                ),
+                              ],
                             ),
                           );
                         },
