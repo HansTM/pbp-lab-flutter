@@ -223,7 +223,43 @@ class _MyFormPageState extends State<MyFormPage> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {}
+                    if (_formKey.currentState!.validate()) {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 15,
+                            child: Container(
+                              child: ListView(
+                                padding: const EdgeInsets.only(
+                                    top: 20, bottom: 20),
+                                shrinkWrap: true,
+                                children: <Widget>[
+                                  Center(child: const Text('Informasi Data')),
+                                  SizedBox(height: 20),
+                                  Text(
+                                    'Nama Lengkap: $_namaLengkap\n' 
+                                    'Jenjang: ${jenjangSarjana ? 'Sarjana' : jenjangDiploma ? 'Diploma' : jenjangMagister ? 'Magister' : 'Doktor'}\n'
+                                    'Umur: $umur\n'
+                                    'Kelas PBP: $kelasPBP\n'
+                                    'Practice Mode: ${_nilaiSwitch ? 'Ya' : 'Tidak'}'
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Kembali'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    }
                   },
                 ),
               ],
