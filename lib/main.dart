@@ -1,4 +1,4 @@
-import 'package:lab/form.dart';
+import 'package:lab/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,38 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    var scaffold = Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       // Menambahkan drawer menu
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Form'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const GlobalDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -91,5 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ),
     );
+    return scaffold;
   }
 }

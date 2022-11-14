@@ -1,4 +1,4 @@
-import 'package:lab/main.dart';
+import 'package:lab/drawer.dart';
 import 'package:flutter/material.dart';
 
 class MyFormPage extends StatefulWidget {
@@ -27,33 +27,7 @@ class _MyFormPageState extends State<MyFormPage> {
         title: Text('Form'),
       ),
       // Menambahkan drawer menu
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Form'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const GlobalDrawer(),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
