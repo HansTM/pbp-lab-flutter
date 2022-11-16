@@ -1,6 +1,7 @@
-import 'package:lab/main.dart';
-import 'package:lab/form.dart';
 import 'package:flutter/material.dart';
+import 'package:lab/page/home.dart';
+import 'package:lab/page/form.dart';
+import 'package:lab/page/todo.dart';
 
 class GlobalDrawer extends StatelessWidget {
   const GlobalDrawer({
@@ -30,6 +31,15 @@ class GlobalDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const MyFormPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('To-Do'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const ToDoPage()),
               );
             },
           ),

@@ -1,4 +1,4 @@
-import 'package:lab/drawer.dart';
+import 'package:lab/page/drawer.dart';
 import 'package:flutter/material.dart';
 
 class MyFormPage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form'),
+        title: const Text('Form'),
       ),
       // Menambahkan drawer menu
       drawer: const GlobalDrawer(),
